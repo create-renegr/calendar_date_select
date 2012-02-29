@@ -1,4 +1,5 @@
 #Adding this line for Rails 3 fix
+require 'rake' # fix for rails 3.0.x
 include Rake::DSL
 require "calendar_date_select/calendar_date_select.rb"
 require "calendar_date_select/form_helpers.rb"
@@ -40,7 +41,7 @@ module CalendarDateSelect
             FileUtils.mkdir_p(dest, :verbose => true)
             FileUtils.cp(Dir.glob(source+'/*.*'), dest, :verbose => true)
           end
-#this is a new change
+
         end # task
       end #namespace
     end # rake_tasks
